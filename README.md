@@ -33,26 +33,28 @@ Participants complete a series of choice tasks where they select their preferred
 
 ---
 
-## **Project Structure**
-├── app.R # Shiny app script to run the survey 
-├── data.csv # Placeholder for collected survey data 
-├── survey.qmd # Quarto markdown file for generating the survey 
-├── survey.html # Generated HTML survey 
-├── code/
-│ └── make_choice_questions.R # Script to generate choice questions 
-├── data/
-│ └── choice_questions.csv # Generated choice tasks for the survey 
-├── images/ # Images used in the survey 
-│ ├── bd-cam.jpg 
-│ ├── dragon.jpg 
-│ ├── totem.jpg 
-│ └── wc-friend.jpg 
-├── rsconnect/ # ShinyApps.io deployment configuration 
-│ └── shinyapps.io/choices/ 
-│ └── dce-cams.dcf # Deployment settings 
-└── survey_files/ # Supporting files for the survey 
-  └── libs/ # Library files for Quarto and survey styling
 
+## **Project Structure**
+```
+├── app.R                         # Shiny app script to run the survey 
+├── data.csv                      # Placeholder for collected survey data 
+├── survey.qmd                    # Quarto markdown file for generating the survey 
+├── survey.html                   # Generated HTML survey 
+├── code/
+│   └── make_choice_questions.R   # Script to generate choice questions 
+├── data/
+│   └── choice_questions.csv      # Generated choice tasks for the survey 
+├── images/                       # Images used in the survey 
+│   ├── bd-cam.jpg 
+│   ├── dragon.jpg 
+│   ├── totem.jpg 
+│   └── wc-friend.jpg 
+├── rsconnect/                    # ShinyApps.io deployment configuration 
+│   └── shinyapps.io/choices/ 
+│       └── dce-cams.dcf          # Deployment settings 
+└── survey_files/                 # Supporting files for the survey 
+    └── libs/                     # Library files for Quarto and survey styling
+```
 
 ---
 
