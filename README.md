@@ -34,9 +34,24 @@ Participants complete a series of choice tasks where they select their preferred
 ---
 
 ## **Project Structure**
-. ├── app.R # Shiny app script to run the survey ├── data.csv # Placeholder for collected survey data ├── survey.qmd # Quarto markdown file for generating the survey ├── survey.html # Generated HTML survey ├── code/
-│ └── make_choice_questions.R # Script to generate choice questions ├── data/
-│ └── choice_questions.csv # Generated choice tasks for the survey ├── images/ # Images used in the survey │ ├── bd-cam.jpg │ ├── dragon.jpg │ ├── totem.jpg │ └── wc-friend.jpg ├── rsconnect/ # ShinyApps.io deployment configuration │ └── shinyapps.io/choices/ │ └── dce-cams.dcf # Deployment settings └── survey_files/ # Supporting files for the survey └── libs/ # Library files for Quarto and survey styling
+├── app.R # Shiny app script to run the survey 
+├── data.csv # Placeholder for collected survey data 
+├── survey.qmd # Quarto markdown file for generating the survey 
+├── survey.html # Generated HTML survey 
+├── code/
+│ └── make_choice_questions.R # Script to generate choice questions 
+├── data/
+│ └── choice_questions.csv # Generated choice tasks for the survey 
+├── images/ # Images used in the survey 
+│ ├── bd-cam.jpg 
+│ ├── dragon.jpg 
+│ ├── totem.jpg 
+│ └── wc-friend.jpg 
+├── rsconnect/ # ShinyApps.io deployment configuration 
+│ └── shinyapps.io/choices/ 
+│ └── dce-cams.dcf # Deployment settings 
+└── survey_files/ # Supporting files for the survey 
+  └── libs/ # Library files for Quarto and survey styling
 
 
 ---
@@ -69,22 +84,23 @@ To deploy online, use the settings in rsconnect/shinyapps.io.
 Collected responses are stored in data.csv in the root directory.
 
 ## Dependencies:
-R 4.3+
-R Packages:
-surveydown
-shiny
-quarto
-dplyr
-tidyr
+- R 4.3+
+- R Packages:
+- - surveydown
+- - shiny
+- - quarto
+- - dplyr
+- - tidyr
+
 Install these packages in R:
 
-R
-Copy code
+```r
 install.packages(c("surveydown", "shiny", "dplyr", "tidyr"))
-Acknowledgments
-This project is built using:
+```
 
-The surveydown package for survey creation.
-Quarto for generating dynamic documents.
-Shiny for deploying interactive web apps.
-For questions or contributions, feel free to open an issue or submit a pull request.
+## Acknowledgments
+This project is built using:
+- The [surveydown](https://surveydown.org) package for survey creation.
+- Quarto for generating dynamic documents.
+- Shiny for deploying interactive web apps.
+- For questions or contributions, feel free to open an issue or submit a pull request.

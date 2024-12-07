@@ -5,7 +5,7 @@ account: choices
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 13548648
-bundleId: 9480148
+bundleId: 9480155
 url: https://choices.shinyapps.io/dce-cams/
 version: 1
 asMultiple: FALSE
