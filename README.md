@@ -1,6 +1,6 @@
 # Climbing Cam Preferences Survey
 
-This repository contains the code and resources to create a **Discrete Choice Experiment (DCE)** for understanding preferences regarding climbing camming devices. The experiment is implemented using the **`surveydown`** package, and it collects data on key attributes: **Price**, **Brand**, **Condition**, and **Delivery Time**.
+This repository contains the code and resources to create a **Discrete Choice Experiment (DCE)** for understanding preferences regarding climbing camming devices. The experiment is implemented using the **`surveydown`** package, and it presents data on attributes: **Price**, **Brand**, **Condition**, and **Delivery Time**.
 
 ## **Table of Contents**
 - [Overview](#overview)
@@ -11,19 +11,19 @@ This repository contains the code and resources to create a **Discrete Choice Ex
 - [Acknowledgments](#acknowledgments)
 
 ## **Overview**
-The survey is designed to explore climbers' preferences for camming devices, focusing on trade-offs between:
+The survey is designed to explore climbers' preferences for camming devices, exploring on trade-offs between:
 - **Price**: Cost of the device.
 - **Brand**: Manufacturer of the device.
 - **Condition**: New or used.
 - **Delivery Time**: Time required for delivery.
 
-Participants complete a series of choice tasks where they select their preferred option from two or more alternatives.
+Participants complete a series of choice tasks where they select their preferred option from three alternatives.
 
 ## **Features**
 - **Dynamic survey generation** using Quarto and R.
 - Customizable DCE design to adjust the attributes and levels.
 - Hosted survey using **ShinyApps.io** for easy deployment.
-- Data collection saved in `.csv` format for analysis.
+- As this is a demo, no data is collected.
 
 
 ## **Project Structure**
@@ -33,7 +33,7 @@ Participants complete a series of choice tasks where they select their preferred
 ├── survey.qmd                    # Quarto markdown file for generating the survey 
 ├── survey.html                   # Generated HTML survey 
 ├── code/
-│   └── make_choice_questions.R   # Script to generate choice questions 
+│   └── make_choice_questions.R   # Script to generate experimental design and choice questions 
 ├── data/
 │   └── choice_questions.csv      # Generated choice tasks for the survey 
 ├── images/                       # Images used in the survey 
