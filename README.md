@@ -2,8 +2,6 @@
 
 This repository contains the code and resources to create a **Discrete Choice Experiment (DCE)** for understanding preferences regarding climbing camming devices. The experiment is implemented using the **`surveydown`** package, and it collects data on key attributes: **Price**, **Brand**, **Condition**, and **Delivery Time**.
 
----
-
 ## **Table of Contents**
 - [Overview](#overview)
 - [Features](#features)
@@ -11,8 +9,6 @@ This repository contains the code and resources to create a **Discrete Choice Ex
 - [Usage](#usage)
 - [Dependencies](#dependencies)
 - [Acknowledgments](#acknowledgments)
-
----
 
 ## **Overview**
 The survey is designed to explore climbers' preferences for camming devices, focusing on trade-offs between:
@@ -23,15 +19,11 @@ The survey is designed to explore climbers' preferences for camming devices, foc
 
 Participants complete a series of choice tasks where they select their preferred option from two or more alternatives.
 
----
-
 ## **Features**
 - **Dynamic survey generation** using Quarto and R.
 - Customizable DCE design to adjust the attributes and levels.
 - Hosted survey using **ShinyApps.io** for easy deployment.
 - Data collection saved in `.csv` format for analysis.
-
----
 
 
 ## **Project Structure**
@@ -56,8 +48,6 @@ Participants complete a series of choice tasks where they select their preferred
     └── libs/                     # Library files for Quarto and survey styling
 ```
 
----
-
 ## **Usage**
 
 ### **1. Set Up the Survey**
@@ -68,21 +58,21 @@ Participants complete a series of choice tasks where they select their preferred
    ```
 Install necessary dependencies (see Dependencies).
 
-2. Generate Choice Questions
+### 2. Generate Choice Questions
 Run the script to generate choice tasks:
 
 ```r
 source("code/make_choice_questions.R")
 ```
 
-3. Deploy the Survey
+### 3. Deploy the Survey
 To preview locally, run:
 ```r
 shiny::runApp("app.R")
 ```
 To deploy online, use the settings in rsconnect/shinyapps.io.
 
-4. Collect and Save Data
+### 4. Collect and Save Data
 Collected responses are stored in data.csv in the root directory.
 
 ## Dependencies:
