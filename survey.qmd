@@ -1,0 +1,410 @@
+---
+format: html
+echo: false
+warning: false
+---
+
+```{r}
+library(surveydown)
+library(dplyr)
+library(kableExtra)
+```
+
+::: {#welcome .sd-page}
+
+# Climbing Camming Devices Survey
+
+::: {.callout-note}
+
+This is a demo survey showcasing the functionality of <a href="https://surveydown.org" target="_blank">surveydown</a>. It doesn't collect any data.
+
+This demo utilizes cookies (stored in your browser). Use incognito mode for a fresh start.
+
+:::
+
+For this survey, we will ask you about your preferences for different types of camming devices used in rock climbing.
+
+```{r}
+sd_next()
+```
+
+:::
+
+::: {#consent .sd-page}
+
+# Consent
+
+This survey is being conducted just for fun. We will not be collecting any identifying data, such as your name or address. The whole survey will take approximately 5 minutes to complete. Your participation is voluntary and you may stop the survey at any time.
+
+If you would like to participate, please answer the following questions:
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'consent_age',
+  label = "I am age 18 or older",
+  option = c(
+    'Yes' = 'yes',
+    'No'  = 'no'
+  )
+)
+
+sd_question(
+  type  = 'mc',
+  id    = 'consent_understand',
+  label = "I have read and understand the above information",
+  option = c(
+    'Yes' = 'yes',
+    'No'  = 'no'
+  )
+)
+
+sd_next()
+```
+
+:::
+
+::: {#favorite_fruit .sd-page}
+
+# Screening
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'like_fruit',
+  label = "Do you like rock climbing?",
+  option = c(
+    'Yes!'    = 'yes',
+    'Kind of' = 'kind_of',
+    'No :('   = 'no'
+  )
+)
+
+sd_next()
+```
+
+:::
+
+
+::: {#cbc_practice .sd-page}
+
+# Practice Question
+
+We'll now begin the choice tasks. On the next few pages we will show you three options of camming devices with varying qualities and we'll ask you to choose the one you most prefer.
+
+```{r}
+# Define the option vector
+
+cbc_options <- c(
+  "Option 1" = "option_1",   
+  "Option 2" = "option_2", 
+  "Option 3" = "option_3"
+)
+
+# Make a fixed data frame for the options
+
+df <- tibble::tibble(
+  altID = c(1, 2, 3),
+  image = c("images/bd-cam.jpg", "images/totem.jpg", "images/dragon.jpg"),
+  type = c("Black Diamond Camalot", "Totem", "DMM Dragon"),
+  price = c(60, 80, 50),
+  condition = c("Lightly Used", "New", "Heavily Used"),
+  delivery = c("One Week", "Two Working Days", "Next Day")
+)
+
+alts <- df |>
+  mutate(
+    price = scales::dollar(price),
+    image = paste0('<img src="', image, '" width=100>')) |>
+  # Make nicer attribute labels
+  select(
+    `Option:` = altID,
+    ` ` = image,
+    `Price:` = price,
+    `Type:` = type,
+    `Condition:` = condition,
+    `Delivery Time:` = delivery
+)
+
+row.names(alts) <- NULL # Drop row names
+
+kbl(t(alts), escape = FALSE) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    position = "center"
+  )
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_practice',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options
+)
+
+sd_next()
+```
+
+:::
+
+::: {#cbc_intro .sd-page}
+
+# Main Task
+
+Great work!
+
+We will now show you 10 choice questions starting on the next page.
+
+```{r}
+sd_next()
+```
+
+:::
+
+::: {#cbc_q1 .sd-page}
+
+<center>
+## Question 1 of 10
+</center>
+
+```{r}
+sd_output("cbc1_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q1',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+
+::: {#cbc_q2 .sd-page}
+
+<center>
+## Question 2 of 10
+</center>
+
+```{r}
+sd_output("cbc2_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q2',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+
+::: {#cbc_q3 .sd-page}
+
+<center>
+## Question 3 of 10
+</center>
+
+```{r}
+sd_output("cbc3_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q3',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+
+::: {#cbc_q4 .sd-page}
+
+<center>
+## Question 4 of 10
+</center>
+
+```{r}
+sd_output("cbc4_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q4',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+
+::: {#cbc_q5 .sd-page}
+
+<center>
+## Question 5 of 10
+</center>
+
+```{r}
+sd_output("cbc5_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q5',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+
+::: {#cbc_q6 .sd-page}
+
+<center>
+## Question 6 of 10
+</center>
+
+```{r}
+sd_output("cbc6_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q6',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+
+
+::: {#cbc_q7 .sd-page}
+
+<center>
+## Question 7 of 10
+</center>
+
+```{r}
+sd_output("cbc7_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q7',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+
+::: {#cbc_q8 .sd-page}
+
+<center>
+## Question 8 of 10
+</center>
+
+```{r}
+sd_output("cbc8_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q8',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+::: {#cbc_q9 .sd-page}
+
+<center>
+## Question 9 of 10
+</center>
+
+```{r}
+sd_output("cbc9_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q9',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+::: {#cbc_q10 .sd-page}
+
+<center>
+## Question 10 of 10
+</center>
+
+```{r}
+sd_output("cbc10_table")
+
+sd_question(
+  type   = 'mc_buttons',
+  id     = 'cbc_q10',
+  label  = "If these were your only options, which would you choose?",
+  option = cbc_options, 
+  width = "800px"
+)
+
+sd_next()
+```
+
+:::
+
+::: {#end_normal .sd-page}
+
+# End Page
+
+The survey is finished. Thank you for your feedback!
+
+Your completion code is: **`r sd_output('completion_code', type = 'value')`**
+
+You may close the window now.
+
+```{r}
+sd_close()
+```
+
+:::
+
+::: {#end_consent .sd-page}
+
+# End Page
+
+The survey is now finished. You may close the window.
+
+```{r}
+sd_close()
+```
+
+:::
+
